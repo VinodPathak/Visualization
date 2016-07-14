@@ -11,15 +11,12 @@ library(ggplot2)
 
 
 ui <- fluidPage(    
-  
   titlePanel("Health"),
-  
   sidebarLayout(      
     sidebarPanel(
       selectInput("Variables", "Variables:",
                   choices=colnames(df))#df is the dataframe
     ),
-    
     mainPanel(width = 6,
               tabsetPanel(
                 tabPanel("Univariate Analysis", plotOutput("healthPlot1"))

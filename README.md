@@ -22,7 +22,7 @@ ui <- fluidPage(
                 tabPanel("Univariate Analysis", plotOutput("healthPlot1"))
               )
     )
-    
+  
   )
 )
 

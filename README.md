@@ -9,13 +9,13 @@ library(shinydashboard)
 library(shiny)
 library(ggplot2)
 
-# df is the dataframe
+#df is the dataframe
 ui <- fluidPage(    
   
-  # Give the page a title
+  #Give the page a title
   titlePanel("Health"),
   
-  # Generate a row with a sidebar
+#Generate a row with a sidebar
   sidebarLayout(      
     
     # Define the sidebar with one input

@@ -3,8 +3,8 @@ Here I have 2 different Shiny Visualization
 1. Univariate Analysis
 2. Bivariate Analysis
 
-###############################################Univariate Analysis########################################
-## app.R ##
+#Univariate Analysis
+
 library(shinydashboard)
 library(shiny)
 library(ggplot2)
@@ -29,7 +29,7 @@ ui <- fluidPage(
   )
 )
 
-# Define a server for the Shiny app
+##### Define a server for the Shiny app
 server <- function(input, output) {
 output$healthPlot1 <- renderPlot({
       ggplot(df,aes(df[,input$Variables]))+
@@ -43,27 +43,22 @@ shinyApp(ui = ui, server = server)
 
 #################################################################################################################################
 
-#######################################Bivariate Analysis#################################################################
-## app.R ##
+#Bivariate Analysis
+
 library(shinydashboard)
 library(shiny)
 library(ggplot2)
-#df is the dataframe for which bivariate Analysis is performed
+
 ui <- fluidPage(    
   
-  # Give the page a title
   titlePanel("Health"),
-  
-  # Generate a row with a sidebar
   sidebarLayout(      
     
-    # Define the sidebar with one input
     sidebarPanel(
       selectInput("Variables", "Variables:",
                   choices=colnames(df[,-c(46,47)]))
     ),
     
-    # Create a spot for the barplot
     mainPanel(width = 12,
               tabsetPanel(
                 tabPanel("variable by health segment", plotOutput("healthPlot1")),
@@ -75,13 +70,8 @@ ui <- fluidPage(
 )
 
 
-
-
-#Define a server for the Shiny app
 server <- function(input, output) {
-  # Fill in the spot we created for a plot
   output$healthPlot1 <- renderPlot({
-    # Render a barplot
     ggplot(df,aes(df[,input$Variables]))+
       geom_bar(aes(fill=as.factor(df[,input$Variables])))+
       facet_wrap(~segment)+

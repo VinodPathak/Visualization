@@ -36,10 +36,10 @@ ui <- fluidPage(
 
 # Define a server for the Shiny app
 server <- function(input, output) {
-  # Fill in the spot we created for a plot
-  output$healthPlot1 <- renderPlot({
-    # Render a barplot
-    ggplot(df,aes(df[,input$Variables]))+
+# Fill in the spot we created for a plot
+output$healthPlot1 <- renderPlot({
+# Render a barplot
+      ggplot(df,aes(df[,input$Variables]))+
       geom_bar(aes(fill=as.factor(df[,input$Variables])))+
       ylab("Count")
   })
@@ -84,8 +84,7 @@ ui <- fluidPage(
 
 
 
-
-# Define a server for the Shiny app
+#Define a server for the Shiny app
 server <- function(input, output) {
   # Fill in the spot we created for a plot
   output$healthPlot1 <- renderPlot({

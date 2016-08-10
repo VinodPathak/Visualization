@@ -26,6 +26,19 @@ ui <- fluidPage(
   )
 )
 
+
+########Legend setting
+library(ggplot2)
+ggplot(df[1:5000,],aes(x=datetime))+
+  geom_line(aes(y=df[1:5000,3],color="volt"))+
+  geom_line(aes(y=df[1:5000,4],color="rotate"))+
+  geom_line(aes(y=df[1:5000,5],color="pressure"))+
+  geom_line(aes(y=df[1:5000,6],color="vibration"))+
+  xlab("Date")+
+  scale_colour_manual("", 
+                      breaks = c("volt","rotate", "pressure", "vibration"),
+                      values = c("coral", "darkorchid", "blue","violet")) 
+
 ##### Define a server for the Shiny app
 server <- function(input, output) {
 output$healthPlot1 <- renderPlot({

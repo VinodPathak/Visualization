@@ -4,7 +4,7 @@ Here I have 2 different Shiny Visualization
 2. Bivariate Analysis
 
 #Univariate Analysis
-
+```
 library(shinydashboard)
 library(shiny)
 library(ggplot2)
@@ -98,3 +98,4 @@ server <- function(input, output) {
 
 
 shinyApp(ui = ui, server = server)
+```

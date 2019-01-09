@@ -1,4 +1,8 @@
 # Visualization
+
+### VEGA  
+https://vega.github.io/  
+
 Here I have 2 different Shiny Visualization
 1. Univariate Analysis
 2. Bivariate Analysis
